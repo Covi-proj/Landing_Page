@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Gallery Showcase | Covi Zabala</title>
+    <title>Covi Zabala</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for social media icons -->
@@ -120,9 +119,9 @@
 
         /* Dark mode toggle button */
         .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
             background-color: #f1f1f1;
             border: none;
             padding: 10px;
@@ -130,6 +129,8 @@
             font-size: 1.5rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            z-index: 1050;
+            /* ensures it's above other elements */
         }
 
         .dark-mode-toggle:hover {
@@ -141,37 +142,49 @@
 
 <body class="dark-mode">
 
-    <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-toggle" id="darkModeToggle">
-        <i class="fas fa-sun"></i>
-    </button>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Covi Zabala</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-link text-white" id="darkModeToggle" aria-label="Toggle Dark Mode">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section (Slideshow / Carousel) -->
     <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="IMG_1965.jpg" class="d-block w-100"
-                    alt="Art Piece 1">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>Art Gallery</h1>
-                    <p>Immerse yourself in a world of contemporary and minimalist artworks</p>
-                </div>
+                <img src="IMG_1965.jpg" class="d-block w-100" alt="Art Piece 1">
+
             </div>
             <div class="carousel-item">
-                <img src="IMG_3002.jpg" class="d-block w-100"
-                    alt="Art Piece 2">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>Explore My Art Gallery</h1>
-                    <p>Discover unique, thought-provoking pieces that challenge your imagination</p>
-                </div>
+                <img src="IMG_3002.jpg" class="d-block w-100" alt="Art Piece 2">
+
             </div>
             <div class="carousel-item">
-                <img src="slay.jpg" class="d-block w-100"
-                    alt="Art Piece 3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>Explore My Art Gallery</h1>
-                    <p>Immerse yourself in stunning visual art that speaks to the soul</p>
-                </div>
+                <img src="slay.jpg" class="d-block w-100" alt="Art Piece 3">
+
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
@@ -186,71 +199,62 @@
 
     <!-- Gallery Section -->
     <section class="gallery">
-        <h2>Featured Artwork</h2>
+        <h2>Mentorship of Two Masters</h2>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
+
                     <div class="card">
-                        <img src="juan.jpg" class="card-img-top" alt="Artwork 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Juan Da Corte</h5>
-                            <p class="card-text">My hero.</p>
-                        </div>
+                        <a href="https://www.instagram.com/juan_dacorte/?hl=en"
+                            style="text-decoration: none; color: white;">
+                            <img src="juan.jpg" class="card-img-top" alt="Artwork 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Juan Da Corte</h5>
+                                <p class="card-text">Juan Andrés Da Corte is a Venezuelan artist and content creator
+                                    known
+                                    for his work as an illustrator, videomaker, and musician. He gained popularity on
+                                    YouTube, where he provides drawing tutorials, animations featuring characters like
+                                    Peppa
+                                    Pig, and original music videos for various artists. His animated video for Justin
+                                    Bieber's "Stuck in the Moment" has amassed over 20 million views.(Reference: Famous
+                                    Birthdays)</p>
+                            </div>
                     </div>
+                    </a>
                 </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="hr.jpg" class="card-img-top" alt="Artwork 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Heather Rooney</h5>
-                            <p class="card-text">The one of my favorite artist</p>
+
+               
+                    <div class="col">
+                        <div class="card">
+                            <a href="https://www.instagram.com/heather12ooney/?hl=en" style="text-decoration: none; color: white;">
+                            <img src="hr.jpg" class="card-img-top" alt="Artwork 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Heather Rooney</h5>
+                                <p class="card-text">Heather Rooney is a renowned American artist celebrated for her
+                                    photorealistic colored pencil and graphite drawings. Born on August 31, 1993, in
+                                    Pittsburgh, Pennsylvania, she developed a passion for art during high school, where
+                                    she
+                                    became captivated by the challenge of photorealistic drawing. Rooney gained
+                                    widespread
+                                    recognition by sharing time-lapse videos of her drawing process on platforms like
+                                    YouTube, Instagram, and Tumblr. Her videos have garnered millions of views, with her
+                                    "Drawing Harry Potter" video alone reaching over 10 million views. (Reference:
+                                    Famous
+                                    Birthdays) </p>
+                            </div>
                         </div>
+                    </a>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="slayeas.webp" class="card-img-top" alt="Artwork 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Slayeas</h5>
-                            <p class="card-text">The beautiful streamer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x400" class="card-img-top" alt="Artwork 4">
-                        <div class="card-body">
-                            <h5 class="card-title">Olivia Rodrigo</h5>
-                            <p class="card-text">My biggest inspiration</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x400" class="card-img-top" alt="Artwork 5">
-                        <div class="card-body">
-                            <h5 class="card-title">Cosmic Awakening</h5>
-                            <p class="card-text">A journey into the unknown, painted with bursts of vibrant colors.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x400" class="card-img-top" alt="Artwork 6">
-                        <div class="card-body">
-                            <h5 class="card-title">Dreams in Motion</h5>
-                            <p class="card-text">A fluid and dynamic piece symbolizing the ever-changing nature of
-                                dreams.</p>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
+        </div>
         </div>
     </section>
 
     <!-- Footer Section -->
     <footer class="footer">
-        <p>&copy; 2025 Covi Zabala. All rights reserved</p>
+        <p>&copy; 2025 Covi Zabala. All rights reserved | Beta Version</p>
+
         <div>
             <a href="https://instagram.com/@covi_zabala" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
             |
@@ -278,287 +282,3 @@
         });
     </script>
 </body>
-
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Gallery Showcase | Covi Zabala</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for social media icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Custom styles -->
-    <style>
-        /* Hero Section */
-        .carousel-item img {
-            width: 100%;
-            height: 80vh;
-            object-fit: cover;
-        }
-
-        .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .carousel-caption h1,
-        .carousel-caption p {
-            color: white;
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: black;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 60px 0;
-        }
-
-        .gallery h2 {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: 600;
-        }
-
-        .gallery .card {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .gallery .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .gallery .card-img-top {
-            height: 400px;
-            object-fit: cover;
-            transition: all 0.3s ease;
-        }
-
-        .gallery .card-body {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .gallery .card-title {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .gallery .card-text {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .footer a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #121212;
-            color: #ffffff;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        body.dark-mode .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        body.dark-mode .gallery .card {
-            background-color: #1f1f1f;
-            border: 1px solid #444;
-        }
-
-        body.dark-mode .footer {
-            background-color: #222;
-        }
-
-        /* Dark mode toggle button */
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #f1f1f1;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dark-mode-toggle:hover {
-            background-color: #333;
-            color: white;
-        }
-    </style>
-</head>
-
-<body class="dark-mode">
-
-    <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-toggle" id="darkModeToggle">
-        <i class="fas fa-sun"></i>
-    </button>
-
-    <!-- Hero Section (Slideshow / Carousel) -->
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://via.placeholder.com/1920x1080?text=Art+Piece+1" class="d-block w-100"
-                    alt="Art Piece 1">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>Explore My Art Gallery</h1>
-                    <p>Immerse yourself in a world of contemporary and minimalist artworks</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/1920x1080?text=Art+Piece+2" class="d-block w-100"
-                    alt="Art Piece 2">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>Explore My Art Gallery</h1>
-                    <p>Discover unique, thought-provoking pieces that challenge your imagination</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/1920x1080?text=Art+Piece+3" class="d-block w-100"
-                    alt="Art Piece 3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>Explore My Art Gallery</h1>
-                    <p>Immerse yourself in stunning visual art that speaks to the soul</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-    <!-- Gallery Section -->
-    <section class="gallery">
-        <h2>Featured Artwork</h2>
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x400" class="card-img-top" alt="Artwork 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Juan Da Corte</h5>
-                            <p class="card-text">My hero.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x400" class="card-img-top" alt="Artwork 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Heather Rooney</h5>
-                            <p class="card-text">The one of my favorite artist</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x400" class="card-img-top" alt="Artwork 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Slayeas</h5>
-                            <p class="card-text">The beautiful streamer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x400" class="card-img-top" alt="Artwork 4">
-                        <div class="card-body">
-                            <h5 class="card-title">NN</h5>
-                            <p class="card-text">My biggest inspiration</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x400" class="card-img-top" alt="Artwork 5">
-                        <div class="card-body">
-                            <h5 class="card-title">Cosmic Awakening</h5>
-                            <p class="card-text">A journey into the unknown, painted with bursts of vibrant colors.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x400" class="card-img-top" alt="Artwork 6">
-                        <div class="card-body">
-                            <h5 class="card-title">Dreams in Motion</h5>
-                            <p class="card-text">A fluid and dynamic piece symbolizing the ever-changing nature of
-                                dreams.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <p>&copy; 2025 Covi Zabala. All rights reserved</p>
-        <div>
-            <a href="https://instagram.com/@covi_zabala" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            |
-            <a href="https://tiktok.com/@covizabala" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a> |
-            <a href="https://github.com/Covi-proj" target="_blank"><i class="fab fa-github"></i> Github</a> |
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-        </div>
-    </footer>
-
-    <!-- Bootstrap and JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <script>
-        // Toggle dark mode
-        document.getElementById('darkModeToggle').addEventListener('click', function () {
-            document.body.classList.toggle('dark-mode');
-            const icon = document.querySelector('.dark-mode-toggle i');
-            if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-        });
-    </script>
-</body>
-
->>>>>>> 2ef65b6b32a1150b7331333937fc4a6e16f300ee
-</html>
