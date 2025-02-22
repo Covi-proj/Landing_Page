@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covi Zabala</title>
+    <title>Covi Zabala | Drawings</title>
+    <link rel="icon" href="v.png" type="image/png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for social media icons -->
@@ -212,22 +213,22 @@
         }
 
         .gallery .card {
-        border: none;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .gallery .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
+        .gallery .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
-    .gallery .card-img-top {
-        height: 300px;
-        object-fit: cover;
-    }
+        .gallery .card-img-top {
+            height: 300px;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -277,46 +278,68 @@
                 <!-- Artwork Cards -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="IMG_1965.jpg" class="card-img-top img-fluid" alt="Artwork 1" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <h5 style = "color: white; text-align: center; margin-top: 10px;">Nina North</h5>
+                        <img src="IMG_1965.jpg" class="card-img-top img-fluid" alt="Artwork 1" data-bs-toggle="modal"
+                            data-bs-target="#modal1">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="IMG_3002.jpg" class="card-img-top img-fluid" alt="Artwork 2" data-bs-toggle="modal" data-bs-target="#modal2">
-                        <h5 style = "color: white; text-align: center; margin-top: 10px;">Lea Martinez(Slayeas)</h5>
+                        <img src="IMG_3002.jpg" class="card-img-top img-fluid" alt="Artwork 2" data-bs-toggle="modal"
+                            data-bs-target="#modal2">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="slay.jpg" class="card-img-top img-fluid" alt="Artwork 3" data-bs-toggle="modal" data-bs-target="#modal3">
-                        <h5 style = "color: white; text-align: center; margin-top: 10px;">Lea Martinez as Padme</h5>
+                        <img src="slay.jpg" class="card-img-top img-fluid" alt="Artwork 3" data-bs-toggle="modal"
+                            data-bs-target="#modal3">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="image.png" class="card-img-top img-fluid" alt="Artwork 4" data-bs-toggle="modal" data-bs-target="#modal4">
-                        <h5 style = "color: white; text-align: center; margin-top: 10px;">Nina North(Bewitching Beauty)</h5>
+                        <img src="image.png" class="card-img-top img-fluid" alt="Artwork 4" data-bs-toggle="modal"
+                            data-bs-target="#modal4">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="ts.jpg" class="card-img-top img-fluid" alt="Artwork 5" data-bs-toggle="modal" data-bs-target="#modal5">
-                        <h5 style = "color: white; text-align: center; margin-top: 10px;">Taylor Swift</h5>
+                        <img src="ts.jpg" class="card-img-top img-fluid" alt="Artwork 5" data-bs-toggle="modal"
+                            data-bs-target="#modal5">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="ninz.jpg" class="card-img-top img-fluid" alt="Artwork 6" data-bs-toggle="modal" data-bs-target="#modal6">
-                        <h5 style = "color: white; text-align: center; margin-top: 10px;">Nina North ft. Millie</h5>
+                        <img src="ninz.jpg" class="card-img-top img-fluid" alt="Artwork 6" data-bs-toggle="modal"
+                            data-bs-target="#modal6">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="LG.jpg" class="card-img-top img-fluid" alt="Artwork 7" data-bs-toggle="modal"
+                            data-bs-target="#modal7">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="ldr.jpg" class="card-img-top img-fluid" alt="Artwork 8" data-bs-toggle="modal"
+                            data-bs-target="#modal8">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="ari.jpg" class="card-img-top img-fluid" alt="Artwork 9" data-bs-toggle="modal"
+                            data-bs-target="#modal9">
                     </div>
                 </div>
             </div>
-            
+
             <!-- Modals for Artwork -->
             <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;">Nina North</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <div class="modal-body text-center">
                             <img src="IMG_1965.jpg" class="img-fluid" alt="Artwork 1">
                         </div>
@@ -326,6 +349,10 @@
             <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;">Lea Martinez(Slayeas)</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <div class="modal-body text-center">
                             <img src="IMG_3002.jpg" class="img-fluid" alt="Artwork 2">
                         </div>
@@ -335,6 +362,10 @@
             <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;">Lea Martinez as Padme</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <div class="modal-body text-center">
                             <img src="slay.jpg" class="img-fluid" alt="Artwork 3">
                         </div>
@@ -344,6 +375,10 @@
             <div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;">Nina North(Bewitching Beauty)</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <div class="modal-body text-center">
                             <img src="image.png" class="img-fluid" alt="Artwork 4">
                         </div>
@@ -353,6 +388,10 @@
             <div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;">Taylor Swift</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <div class="modal-body text-center">
                             <img src="ts.jpg" class="img-fluid" alt="Artwork 5">
                         </div>
@@ -362,13 +401,56 @@
             <div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;">Nina North ft. Millie</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <div class="modal-body text-center">
                             <img src="ninz.jpg" class="img-fluid" alt="Artwork 6">
                         </div>
                     </div>
                 </div>
             </div>
-            
+            <div class="modal fade" id="modal7" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;">Leah Gotti</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="LG.jpg" class="img-fluid" alt="Artwork 7">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modal8" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;">Lana Del Rey</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="ldr.jpg" class="img-fluid" alt="Artwork 7">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modal9" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;">Ariana Grande</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="ari.jpg" class="img-fluid" alt="Artwork 7">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </section>
