@@ -4,261 +4,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covi Zabala | Drawings</title>
+    <title>COVI ZABALA | DRAWINGS</title>
     <link rel="icon" href="v.png" type="image/png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for social media icons -->
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles -->
     <style>
-        .dark-mode {
-
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Hero Section */
-        .carousel-item img {
+        /* Header/Navigation */
+        .navbar {
+            background-color: #ffffff !important;
+            padding: 25px 0;
+            position: fixed;
             width: 100%;
-            height: 80vh;
-            object-fit: cover;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
 
-        .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 8px;
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: #000 !important;
+            text-transform: uppercase;
         }
 
-        .carousel-caption h1,
-        .carousel-caption p {
-            color: white;
+        .nav-link {
+            color: #000 !important;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+            padding: 0.5rem 1rem !important;
+            margin: 0 10px;
         }
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: black;
+        .nav-link:hover {
+            color: #666 !important;
         }
 
         /* Gallery Section */
         .gallery {
-            padding: 60px 0;
+            padding: 100px 0 60px;
+            background-color: #ffffff;
         }
 
         .gallery h2 {
-            font-size: 3rem;
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
             text-align: center;
             margin-bottom: 40px;
-            font-weight: 600;
+            color: #000;
         }
 
         .gallery .card {
             border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .gallery .card:hover {
-            transform: translateY(-10px);
+            border-radius: 0;
+            background: none;
+            margin-bottom: 30px;
+            cursor: pointer;
         }
 
         .gallery .card-img-top {
-            height: 400px;
-            object-fit: cover;
-            transition: all 0.3s ease;
+            border-radius: 0;
+            transition: opacity 0.3s ease;
+            width: 100%;
+            height: auto;
         }
 
-        .gallery .card-body {
+        .gallery .card:hover .card-img-top {
+            opacity: 0.8;
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 0;
+            border: none;
+            background-color: #ffffff;
+        }
+
+        .modal-header {
+            border: none;
             padding: 20px;
-            text-align: center;
+            background-color: #ffffff;
         }
 
-        .gallery .card-title {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 15px;
+        .modal-title {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #000;
         }
 
-        .gallery .card-text {
-            font-size: 1rem;
-            color: #555;
+        .modal-body {
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        .btn-close {
+            opacity: 1;
         }
 
         /* Footer */
         .footer {
-            background-color: #333;
-            color: white;
+            background-color: #ffffff;
+            padding: 40px 0;
             text-align: center;
-            padding: 20px 0;
+            letter-spacing: 2px;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: #000;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .footer a {
-            color: #fff;
+            color: #000;
             text-decoration: none;
+            margin: 0 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .footer a:hover {
-            text-decoration: underline;
+            color: #666;
+        }
+
+        /* Category Label */
+        .category-label {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background-color: #ffffff;
+            color: #000;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Remove dark mode styles as the reference site doesn't have it */
+        #darkModeToggle {
+            display: none;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 20px;
+            }
+
+            .nav-link {
+                font-size: 12px;
+                padding: 0.5rem !important;
+            }
+
+            .gallery {
+                padding: 80px 0 40px;
+            }
         }
 
         /* Dark Mode Styles */
         body.dark-mode {
             background-color: #121212;
             color: #ffffff;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        body.dark-mode .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.7);
+        body.dark-mode .navbar {
+            background-color: #121212 !important;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        body.dark-mode .gallery .card {
-            background-color: #1f1f1f;
-            border: 1px solid #444;
+        body.dark-mode .navbar-brand,
+        body.dark-mode .nav-link {
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .nav-link:hover {
+            color: #999 !important;
+        }
+
+        body.dark-mode .gallery {
+            background-color: #121212;
+        }
+
+        body.dark-mode .gallery h2 {
+            color: #ffffff;
+        }
+
+        body.dark-mode .category-label {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        body.dark-mode .modal-content {
+            background-color: #121212;
+        }
+
+        body.dark-mode .modal-header {
+            background-color: #121212;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        body.dark-mode .modal-title {
+            color: #ffffff;
+        }
+
+        body.dark-mode .btn-close {
+            filter: invert(1);
         }
 
         body.dark-mode .footer {
-            background-color: #222;
+            background-color: #121212;
         }
 
-        /* Dark mode toggle button */
-        .dark-mode-toggle {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #f1f1f1;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 1050;
-            /* ensures it's above other elements */
+        body.dark-mode .footer p,
+        body.dark-mode .footer a {
+            color: #ffffff;
         }
 
-        .dark-mode-toggle:hover {
-            background-color: #333;
-            color: white;
+        body.dark-mode .footer a:hover {
+            color: #999;
         }
 
-        .navbar {
-            padding: 6px 0;
-            /* Reducing top & bottom padding */
-        }
-
-        .navbar-brand {
-            font-size: 1.2rem;
-            padding: 4px 0;
-        }
-
-        .navbar-nav .nav-link {
-            font-size: 0.95rem;
-            /* Smaller font size */
-            padding: 6px 12px;
-        }
-
+        /* Dark Mode Toggle Button */
         #darkModeToggle {
-            font-size: 1.1rem;
-            transition: transform 0.3s ease;
-        }
-
-        #darkModeToggle:hover {
-            transform: rotate(15deg);
-        }
-
-        .nav-link {
-            font-weight: bold;
-
-        }
-
-        @media (max-width: 768px) {
-            .card {
-                flex-direction: column;
-                /* Ensure cards are stacked vertically on smaller screens */
-                align-items: center;
-                /* Center the content */
-            }
-
-            .card-body {
-                padding: 15px;
-            }
-
-            .card-img-top {
-                width: 80%;
-                /* Make the image take up more space */
-                height: auto;
-                /* Keep aspect ratio */
-                margin-bottom: 20px;
-            }
-
-            h6 {
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .card {
-                max-width: 1000px;
-            }
-        }
-
-        .gallery .card {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
             border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: inherit;
+            cursor: pointer;
+            padding: 0.5rem;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
         }
 
-        .gallery .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        #darkModeToggle i {
+            margin-left: 8px;
+            font-size: 14px;
         }
 
-        .gallery .card-img-top {
-            height: 300px;
-            object-fit: cover;
+        /* Smooth Transitions */
+        body,
+        .navbar,
+        .nav-link,
+        .gallery,
+        .modal-content,
+        .footer,
+        .category-label {
+            transition: all 0.3s ease;
         }
     </style>
 </head>
 
-<body class="dark-mode">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+<body>
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <!-- Brand Name -->
-            <a class="navbar-brand " href="vee.html" style="font-size: 1.3rem; letter-spacing: 0.5px;">Covi Zabala</a>
-
-            <!-- Toggler for Mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="vee.html">DRAWINGS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Navbar Links -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="drawing.html">Drawings</a>
+                        <a class="nav-link" href="vee.html">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">ABOUT</a>
                     </li>
                     <li class="nav-item">
-                        <!-- Compact Dark Mode Toggle -->
-                        <button class="btn btn-link text-white p-0 ms-2" id="darkModeToggle"
-                            aria-label="Toggle Dark Mode">
-                            <i class="fas fa-moon"></i>
+                        <button id="darkModeToggle" class="nav-link">
+                            MODE <i class="fas fa-moon"></i>
                         </button>
                     </li>
                 </ul>
@@ -266,68 +302,81 @@
         </div>
     </nav>
 
-
-    <!-- Hero Section (Slideshow / Carousel) -->
-
-
-    <!-- Gallery Section -->
     <section class="gallery">
-        <section class="gallery container">
-            <h2 class="text-center mb-5">Art Gallery</h2>
+        <div class="container">
+            <h2 style="margin-top: 20px;">ARTWORKS</h2>
             <div class="row g-4">
                 <!-- Artwork Cards -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="IMG_1965.jpg" class="card-img-top img-fluid" alt="Artwork 1" data-bs-toggle="modal"
-                            data-bs-target="#modal1">
+                        <div class="position-relative">
+                            <img src="IMG_1965.jpg" class="card-img-top" alt="Artwork 1" data-bs-toggle="modal" data-bs-target="#modal1">
+                            <div class="category-label">Nina North 2024</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="IMG_3002.jpg" class="card-img-top img-fluid" alt="Artwork 2" data-bs-toggle="modal"
-                            data-bs-target="#modal2">
+                        <div class="position-relative">
+                            <img src="IMG_3002.jpg" class="card-img-top" alt="Artwork 2" data-bs-toggle="modal" data-bs-target="#modal2">
+                            <div class="category-label">Lea Martinez(Slayeas) 2022</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="slay.jpg" class="card-img-top img-fluid" alt="Artwork 3" data-bs-toggle="modal"
-                            data-bs-target="#modal3">
+                        <div class="position-relative">
+                            <img src="slay.jpg" class="card-img-top" alt="Artwork 3" data-bs-toggle="modal" data-bs-target="#modal3">
+                            <div class="category-label">Lea Martinez as Padme 2022</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="image.png" class="card-img-top img-fluid" alt="Artwork 4" data-bs-toggle="modal"
-                            data-bs-target="#modal4">
+                        <div class="position-relative">
+                            <img src="image.png" class="card-img-top" alt="Artwork 4" data-bs-toggle="modal" data-bs-target="#modal4">
+                            <div class="category-label">Nina North(Bewitching Beauty) 2024</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="ts.jpg" class="card-img-top img-fluid" alt="Artwork 5" data-bs-toggle="modal"
-                            data-bs-target="#modal5">
+                        <div class="position-relative">
+                            <img src="ts.jpg" class="card-img-top" alt="Artwork 5" data-bs-toggle="modal" data-bs-target="#modal5">
+                            <div class="category-label">Taylor Swift 2024</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="ninz.jpg" class="card-img-top img-fluid" alt="Artwork 6" data-bs-toggle="modal"
-                            data-bs-target="#modal6">
+                        <div class="position-relative">
+                            <img src="ninz.jpg" class="card-img-top" alt="Artwork 6" data-bs-toggle="modal" data-bs-target="#modal6">
+                            <div class="category-label">Nina North ft. Millie 2024</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="LG.jpg" class="card-img-top img-fluid" alt="Artwork 7" data-bs-toggle="modal"
-                            data-bs-target="#modal7">
+                        <div class="position-relative">
+                            <img src="LG.jpg" class="card-img-top" alt="Artwork 7" data-bs-toggle="modal" data-bs-target="#modal7">
+                            <div class="category-label">Leah Gotti 2024</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="ldr.jpg" class="card-img-top img-fluid" alt="Artwork 8" data-bs-toggle="modal"
-                            data-bs-target="#modal8">
+                        <div class="position-relative">
+                            <img src="ldr.jpg" class="card-img-top" alt="Artwork 8" data-bs-toggle="modal" data-bs-target="#modal8">
+                            <div class="category-label">Lana Del Rey 2024</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="ari.jpg" class="card-img-top img-fluid" alt="Artwork 9" data-bs-toggle="modal"
-                            data-bs-target="#modal9">
+                        <div class="position-relative">
+                            <img src="ari.jpg" class="card-img-top" alt="Artwork 9" data-bs-toggle="modal" data-bs-target="#modal9">
+                            <div class="category-label">Ariana Grande 2024</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -337,7 +386,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" style="color: black;">Nina North</h5>
+                            <h5 class="modal-title">Nina North</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
@@ -350,7 +399,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" style="color: black;">Lea Martinez(Slayeas)</h5>
+                            <h5 class="modal-title">Lea Martinez(Slayeas)</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
@@ -363,7 +412,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" style="color: black;">Lea Martinez as Padme</h5>
+                            <h5 class="modal-title">Lea Martinez as Padme</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
@@ -376,7 +425,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" style="color: black;">Nina North(Bewitching Beauty)</h5>
+                            <h5 class="modal-title">Nina North(Bewitching Beauty)</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
@@ -389,7 +438,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" style="color: black;">Taylor Swift</h5>
+                            <h5 class="modal-title">Taylor Swift</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
@@ -402,7 +451,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" style="color: black;">Nina North ft. Millie</h5>
+                            <h5 class="modal-title">Nina North ft. Millie</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
@@ -415,7 +464,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" style="color: black;">Leah Gotti</h5>
+                            <h5 class="modal-title">Leah Gotti</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
@@ -428,7 +477,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" style="color: black;">Lana Del Rey</h5>
+                            <h5 class="modal-title">Lana Del Rey</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
@@ -441,7 +490,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" style="color: black;">Ariana Grande</h5>
+                            <h5 class="modal-title">Ariana Grande</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
@@ -450,29 +499,47 @@
                     </div>
                 </div>
             </div>
-
-        </section>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
     </section>
 
-    <!-- Footer Section -->
-
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 COVI ZABALA</p>
+            <div>
+                <a href="https://www.instagram.com/covi_zabala/" target="_blank">INSTAGRAM</a>
+                <a href="https://tiktok.com/@covizabala" target="_blank">TIKTOK</a>
+                <a href="https://github.com/Covi-proj" target="_blank">GITHUB</a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap and JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Toggle dark mode
-        document.getElementById('darkModeToggle').addEventListener('click', function () {
+        // Dark mode toggle with localStorage
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const icon = darkModeToggle.querySelector('i');
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            const icon = document.querySelector('.dark-mode-toggle i');
+            
             if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
+                localStorage.setItem('darkMode', 'enabled');
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
+            } else {
+                localStorage.setItem('darkMode', null);
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
             }
         });
     </script>
 </body>
+</html>
